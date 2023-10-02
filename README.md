@@ -24,14 +24,31 @@
 
 ### Задание 1
 
-`Приведите ответ в свободной форме........`
+Установите Zabbix Server с веб-интерфейсом.
 
-1. `Заполните здесь этапы выполнения, если требуется ....`
-2. `Заполните здесь этапы выполнения, если требуется ....`
-3. `Заполните здесь этапы выполнения, если требуется ....`
-4. `Заполните здесь этапы выполнения, если требуется ....`
-5. `Заполните здесь этапы выполнения, если требуется ....`
-6. 
+### Процесс выполнения
+Выполняя ДЗ сверяйтесь с процессом отражённым в записи лекции.
+Установите PostgreSQL. Для установки достаточна та версия что есть в системном репозитороии Debian 11
+Пользуясь конфигуратором комманд с официального сайта, составьте набор команд для установки последней версии Zabbix с поддержкой PostgreSQL и Apache
+Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server
+### Требования к результаты
+Прикрепите в файл README.md скриншот авторизации в админке
+Приложите в файл README.md текст использованных команд в GitHub
+
+### Решение и команды
+В процессе выполнения данного домашнего задания был установлен Zabbix Server и Zabiix Webserver, а также PostgreSQL с Apache.
+
+sudo apt update
+wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
+sudo dpkg -i zabbix-release_6.0-4+debian11_all.deb
+sudo apt update
+sudo apt install zabbix-server-pgsql zabbix-frontend-php php7.4-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+sudo -u postgres createuser --pwprompt zabbix
+sudo -u postgres createdb -O zabbix zabbix
+zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+nano /etc/zabbix/zabbix_server.conf параметр DBPassword=***
+sudo systemctl restart zabbix-server zabbix-agent apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
 
 ```
 Поле для вставки кода...
@@ -42,7 +59,7 @@
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота 1](ссылка на скриншот 1)`
+![1](Screenshot_2.png)`
 
 
 ---
