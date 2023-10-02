@@ -37,6 +37,7 @@
 
 ### Решение и команды
 В процессе выполнения данного домашнего задания был установлен Zabbix Server и Zabiix Webserver, а также PostgreSQL с Apache.
+Были использованы следующие команды:
 
 1.sudo apt update  
 2.wget https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb  
@@ -50,15 +51,8 @@
 10.sudo systemctl restart zabbix-server zabbix-agent apache2  
 11.sudo systemctl enable zabbix-server zabbix-agent apache2  
 
-```
-Поле для вставки кода...
-....
-....
-....
-....
-```
 
-`При необходимости прикрепитe сюда скриншоты
+
 ![1](Screenshot_2.png)`
 
 
