@@ -52,8 +52,13 @@
 11.sudo systemctl enable zabbix-server zabbix-agent apache2  
 
 
-
+### Ответ
 ![1](Screenshot_2.png)`
+![2](Screenshot_3.png)`
+![3](Screenshot_4.png)`
+![4](Screenshot_5.png)`
+![5](Screenshot_6.png)`
+![6](11.png)`
 
 
 ---
